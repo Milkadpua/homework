@@ -1,0 +1,5 @@
+npx playwright test 
+ Run the end-to-end tests
+
+npx playwright test --ui
+  

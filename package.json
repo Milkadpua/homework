@@ -1,0 +1,23 @@
+{
+  "name": "playwrightextension-7",
+  "version": "1.0.0",
+  "description": "new npm - test",
+  "main": "index.js",
+  "keywords": [],
+  "author": "MilaQA",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "odottaa": "^1.1.19"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.55.1",
+    "qa-dojo-7-practice": "^1.0.0"
+  },
+  "scripts": {
+    "refactor:goto": "node refactor-goto-urls.js"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
