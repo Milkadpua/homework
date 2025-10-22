@@ -11,9 +11,7 @@ test(
   },
   async ({ page }) => {
     await page.goto('https://demoqa.com/radio-button');
-    await page.locator('xpath=//*[@id="impressiveRadio"]/label').check();
-    await page
-      .locator('xpath=//*[@id="app"]//*[@id="yesRadio" and @name="like"]')
-      .check();
+    await page.locator('xpath=//label[for="yesRadio"]').check();
+    await page.locator('xpath=//label[for="impressiveRadio"]').check();
   }
 );
