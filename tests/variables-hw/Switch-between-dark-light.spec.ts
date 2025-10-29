@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 const baseUrl = 'https://playwright.dev/';
 test(
-  'Playwright-oo1 Switch between dark and light',
+  '021 Playwright Switch between dark and light',
   {
     tag: ['@smoke', '@playwright'],
     annotation: {

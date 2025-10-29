@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 const baseUrl = 'https://demo.learnwebdriverio.com/register';
 
 test(
-  'successful login form',
+  '020 successful login form',
   {
     tag: ['@smoke', '@registration'],
     annotation: {
