@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 const baseUrl = 'https://demo.learnwebdriverio.com/register';
 
 test(
-  'failed registration: already used username',
+  '019 failed registration: already used username',
   {
     tag: ['@smoke', '@registration'],
     annotation: {

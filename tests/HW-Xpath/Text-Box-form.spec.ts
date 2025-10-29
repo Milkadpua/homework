@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test(
-  'Text Box form',
+  '008 Text Box form',
   {
     tag: ['@demoqa', '@xpath'],
     annotation: {

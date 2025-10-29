@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Locator } from '@playwright/test';
 
 test(
-  'CoffeeCard-0004 Check registration form',
+  '017 CoffeeCard Check registration form',
   {
     tag: ['@smoke', '@coffeecard'],
     annotation: {
@@ -10,16 +10,18 @@ test(
     },
   },
   async ({ page }) => {
-    const EsspressoMacchiato = page.locator('[data-test="Espresso_Macchiato"]');
-    const Checkout = page.locator('[data-test="checkout"]');
-    const ButtonClose = page.locator('button.close');
+    const EsspressoMacchiato: Locator = page.locator(
+      '[data-test="Espresso_Macchiato"]'
+    );
+    const Checkout: Locator = page.locator('[data-test="checkout"]');
+    const ButtonClose: Locator = page.locator('button.close');
     const PaymentDetails = page.getByRole('heading', {
       name: 'Payment details',
     });
     const TextSendYouPayment = page.getByText('We will send you a payment');
-    const Nametextbox = page.locator('textbox[aria-label="Name"]');
-    const Emailtextbox = page.locator('textbox[aria-label="Email"]');
-    const Promotioncheckbox = page.locator(
+    const Nametextbox: Locator = page.locator('textbox[aria-label="Name"]');
+    const Emailtextbox: Locator = page.locator('textbox[aria-label="Email"]');
+    const Promotioncheckbox: Locator = page.locator(
       'checkbox[aria-label="Promotion checkbox"]'
     );
     const ThanksButton = page.getByRole('button', {

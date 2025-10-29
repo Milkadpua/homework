@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test(
-  'Radio-button form',
+  '007 Radio-button form',
   {
     tag: ['@demoqa', '@xpath'],
     annotation: {
@@ -10,8 +10,20 @@ test(
     },
   },
   async ({ page }) => {
+    const yesRadioLocator = page.locator("//*[@for='yesRadio']");
+    const impressiveRadioLocator = page.locator("//*[@for='impressiveRadio']");
+    const noRadoilocator = page.locator("//*[@for='noRadio']");
+    const successTextLocator = page.locator("//*[@class='text-success']");
+
     await page.goto('https://demoqa.com/radio-button');
-    await page.locator('xpath=//label[for="yesRadio"]').check();
-    await page.locator('xpath=//label[for="impressiveRadio"]').check();
+
+    await yesRadioLocator.check();
+    await expect(yesRadioLocator).toBeChecked();
+    await expect(successTextLocator).toHaveText('Yes');
+
+    await expect(noRadoilocator).toBeDisabled();
+    await impressiveRadioLocator.check();
+    await expect(impressiveRadioLocator).toBeChecked();
+    await expect(successTextLocator).toHaveText('Impressive');
   }
 );

@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Locator } from '@playwright/test';
 
 test(
-  ' CoffeeCard-0003 Check the correct quantity in the cart',
+  ' 016 CoffeeCard Check the correct quantity in the cart',
   {
     tag: ['@smoke', '@coffeecard'],
     annotation: {
@@ -10,12 +10,14 @@ test(
     },
   },
   async ({ page }) => {
-    const FlatWhiteLocator = page.locator('[data-test="Flat_White"]');
-    const CartPage = page.locator('link[aria-label="Cart page"]');
-    const ItemCartPage = page.locator('.list-header:has text("Item")');
-    const UnitCartPage = page.locator('.list-header:has text("Unit")');
-    const TotalCartPage = page.locator('.list-header:has text("Total")');
-    const RemoveQTYButton = page.locator(
+    const FlatWhiteLocator: Locator = page.locator('[data-test="Flat_White"]');
+    const CartPageLink: Locator = page.locator('link[aria-label="Cart page"]');
+    const ItemCartPage: Locator = page.locator('.list-header:has text("Item")');
+    const UnitCartPage: Locator = page.locator('.list-header:has text("Unit")');
+    const TotalCartPage: Locator = page.locator(
+      '.list-header:has text("Total")'
+    );
+    const RemoveQTYButton: Locator = page.locator(
       'button[aria-label="Remove one Flat White"]'
     );
     const AddQTYButton = page.locator(
