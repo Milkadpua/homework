@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 - "Число від’ємне."
 - "Число дорівнює нулю." */
 
-function isPositive(number) {
+function isPositive(number: number) {
   if (typeof number === 'number') {
     if (number > 0) {
       console.log('number is positive');
@@ -33,6 +33,7 @@ function isPositive(number) {
 // -1
 // + бескінечність
 // - бескінечність
+
 test('is positive', async () => {
   const result = isPositive(1);
   expect(result).toBeTruthy();

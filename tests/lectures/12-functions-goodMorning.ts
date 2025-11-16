@@ -8,7 +8,7 @@
 - Якщо год > 18: "Доброго вечора!"
 */
 
-export function sayHiByHour(time) {
+export function sayHiByHour(time: Number) {
   const goodMorning = 'Доброго ранку!';
   const goodAfternoon = 'Доброго дня!';
   const goodEvening = 'Доброго вечора!';

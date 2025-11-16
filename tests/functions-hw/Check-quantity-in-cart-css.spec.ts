@@ -10,14 +10,21 @@ test(
     },
   },
   async ({ page }) => {
+    const cartPage = ['Item', 'Unit', 'Total'];
+
+    function textIsVisible(cartPage) {
+      expect(page.locator('.list-header:has-text(cartPage)')).toBeVisible();
+    }
+
     await page.goto('');
     await page.locator('[data-test="Flat_White"]').dblclick();
     await page
       .locator('a[aria-label="Cart page"]', { hasText: 'cart (2)' })
       .click();
-    await expect(page.locator('.list-header:has-text("Item")')).toBeVisible();
-    await expect(page.locator('.list-header:has-text("Unit")')).toBeVisible();
-    await expect(page.locator('.list-header:has-text("Total")')).toBeVisible();
+
+    for (let i = 0; i < 3; i++) {
+      textIsVisible(cartPage[i]);
+    }
     await page
       .locator('button[aria-label="Remove one Flat White"]')
       .last()
@@ -27,10 +34,11 @@ test(
       .click();
     await page
       .locator('button[aria-label="Add one Flat White"]')
-      .last()
+      .first()
       .click();
     await page
       .locator('a[aria-label="Cart page"]', { hasText: 'cart (2)' })
+      .last()
       .click();
   }
 );
