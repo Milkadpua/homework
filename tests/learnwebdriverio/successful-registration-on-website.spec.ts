@@ -1,12 +1,12 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test';
 
 test(
-  "successful registration on the website",
+  '014 successful registration on the website',
   {
-    tag: ["@smoke", "@registration"],
+    tag: ['@smoke', '@registration'],
     annotation: {
-      type: "description",
-      description: "Check successful registration on the website",
+      type: 'description',
+      description: 'Check successful registration on the website',
     },
   },
   async ({ page }) => {
@@ -29,17 +29,17 @@ test(
     const randomName = generateRandomName();
 
     // Заповнення форми
-    await page.goto("https://demo.learnwebdriverio.com/register");
-    await expect(page.getByRole("heading", { name: "Sign up" })).toBeVisible();
+    await page.goto('https://demo.learnwebdriverio.com/register');
+    await expect(page.getByRole('heading', { name: 'Sign up' })).toBeVisible();
 
-    await page.getByRole("textbox", { name: "Username" }).fill(randomName);
+    await page.getByRole('textbox', { name: 'Username' }).fill(randomName);
 
-    await page.getByRole("textbox", { name: "Email" }).fill(randomEmail);
+    await page.getByRole('textbox', { name: 'Email' }).fill(randomEmail);
 
-    await page.getByRole("textbox", { name: "Password" }).fill("123456f");
-    await page.getByRole("button", { name: "Sign up" }).click();
+    await page.getByRole('textbox', { name: 'Password' }).fill('123456f');
+    await page.getByRole('button', { name: 'Sign up' }).click();
 
-    await expect(page.getByText("A place to share your")).toBeVisible();
-    await expect(page.getByRole("link", { name: "Home" })).toBeVisible();
+    await expect(page.getByText('A place to share your')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
   }
 );
