@@ -15,8 +15,6 @@ test(
       const randomString = Math.random().toString(36).substring(2, 10);
       return `user_${randomString}@test.com`;
     }
-
-    // Генеруємо email
     const randomEmail = generateRandomEmail();
 
     // Функція для генерації рандомного Name
@@ -24,11 +22,8 @@ test(
       const randomString = Math.random().toString(36).substring(2, 10);
       return `user${randomString}`;
     }
-
-    // Генеруємо email
     const randomName = generateRandomName();
 
-    // Заповнення форми
     await page.goto('https://demo.learnwebdriverio.com/register');
     await expect(page.getByRole('heading', { name: 'Sign up' })).toBeVisible();
 
