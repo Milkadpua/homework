@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@playwright/test": "^1.55.1",
+    "date-fns": "^4.1.0",
     "qa-dojo-7-practice": "^1.0.0"
   },
   "scripts": {
